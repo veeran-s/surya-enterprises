@@ -1,0 +1,364 @@
+:root {
+    --primary: #1D3557;
+    --secondary: #457B9D;
+    --accent: #E63946;
+    --light: #F1FAEE;
+    --dark: #293241;
+    --success: #25D366; /* WhatsApp Green */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============== NAVBAR ============== */
+.navbar {
+    background: linear-gradient(135deg, #1D3557 0%, #293241 100%) !important;
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    filter: drop-shadow(0 2px 4px rgba(255,255,255,0.2));
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+    margin: 0 10px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--accent) !important;
+}
+
+/* ============== HERO SECTION ============== */
+.hero-section {
+    background: linear-gradient(135deg, rgba(29, 53, 87, 0.95) 0%, rgba(41, 50, 65, 0.9) 100%), 
+                url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(230, 57, 70, 0.1) 100%);
+    animation: heroGlow 8s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============== PRODUCT & SERVICE CARDS ============== */
+.product-card, .service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before, .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    transition: left 0.5s ease;
+}
+
+.product-card:hover::before, .service-card:hover::before {
+    left: 100%;
+}
+
+.product-card {
+    border-left: 5px solid var(--secondary);
+}
+
+.service-card {
+    border-left: 5px solid var(--accent);
+}
+
+.product-card:hover, .service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.product-card h5 {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.service-card h5 {
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+/* ============== SECTION HEADINGS ============== */
+h2 {
+    color: var(--primary);
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--secondary));
+    border-radius: 2px;
+}
+
+/* ============== BUTTONS ============== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    padding: 14px 35px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(29, 53, 87, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(29, 53, 87, 0.5);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #E63946, #c12e3a);
+    border: none;
+    padding: 14px 45px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4); }
+    50% { box-shadow: 0 6px 30px rgba(230, 57, 70, 0.7); }
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #c12e3a, #E63946);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 35px rgba(230, 57, 70, 0.6);
+}
+
+/* ============== WHATSAPP BUTTON (MASS EFFECT!) ============== */
+.btn-success {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border: none;
+    padding: 15px 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-success::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-success:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7);
+    animation: shake 0.6s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: scale(1.08) rotate(0deg); }
+    25% { transform: scale(1.08) rotate(2deg); }
+    50% { transform: scale(1.08) rotate(-2deg); }
+    75% { transform: scale(1.08) rotate(1deg); }
+}
+
+.btn-success:active {
+    transform: scale(0.95);
+}
+
+/* ============== FORM INPUTS ============== */
+.form-control {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 15px rgba(69, 123, 157, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ============== ABOUT SECTION ============== */
+#about img {
+    transition: transform 0.5s ease;
+}
+
+#about img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ============== FOOTER ============== */
+footer {
+    border-top: 4px solid var(--accent);
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+footer small {
+    font-size: 0.75rem !important;
+    color: #a0a0a0;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .btn-danger, .btn-primary, .btn-success {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ============== SCROLL ANIMATIONS ============== */
+section {
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
