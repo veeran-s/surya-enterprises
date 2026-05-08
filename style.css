@@ -27,11 +27,10 @@ html {
 }
 
 /* ============== NAVBAR ============== */
+/* Navbar little lighter blue gradient */
 .navbar {
-    background: linear-gradient(135deg, #1D3557 0%, #293241 100%) !important;
-    padding: 15px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
+  background: linear-gradient(90deg, #020617, #111827);
+  backdrop-filter: blur(10px);
 }
 
 .navbar-brand {
@@ -989,7 +988,7 @@ section {
 
 /* Navbar little glass effect */
 .navbar {
-  background: rgba(15, 23, 42, 0.94);
+  background: linear-gradient(90deg, #020617, #111827);
   backdrop-filter: blur(10px);
 }
 
@@ -1605,10 +1604,63 @@ h2 {
   </div>
 </div>
 
-/* Common title: Products and services */
+/* Wrapper box for Products and services heading */
+.products-services-wrapper {
+  display: inline-block;
+  padding: 10px 26px 14px;
+  border-radius: 999px;
+  background: rgba(226, 232, 255, 0.8);
+  border: 1px solid rgba(129, 140, 248, 0.5);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+}
+
+/* Small label above title */
+.products-services-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #4b5563;
+  margin: 0 0 2px;
+}
+
+/* Big title */
 .products-services-title {
-  font-size: 1.7rem;
-  font-weight: 700;
+  position: relative;
+  font-size: 1.9rem;
+  font-weight: 800;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
   color: #111827;
+}
+
+/* Underline inside pill */
+.products-services-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  width: 130px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1d4ed8, #60a5fa);
+  opacity: 0.9;
+}
+
+@media (max-width: 767.98px) {
+  .products-services-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Logo treat as badge so white doesn't dominate */
+.logo-img {
+  height: 40px;
+  width: auto;
+  margin-right: 8px;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #0b1220;              /* dark navy behind logo */
+  box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.7); /* thin light border */
 }
