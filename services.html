@@ -1,23 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hii Example</title>
-  <style>
-    body {
-      background-color: #222;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 20%;
-    }
-    h1 {
-      font-size: 60px;
-      color: #ff4081;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Title | Suriya Enterprises</title>
+
+  <!-- Bootstrap & main styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>hii</h1>
+
+  <!-- NAVBAR (same for all pages) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo.png" alt="Suriya Enterprises" class="logo-img">
+        SURIYA ENTERPRISES
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+                   <li class="nav-item"><a class="nav-link" href="index.html">←←Back to Home</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER (change title per page) -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h1 class="mb-3">Page Main Heading</h1>
+      <p class="text-muted mb-0">
+        Small subtitle / description about this page. You can edit this line per page.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT AREA (UNIQUE FOR EACH PAGE) -->
+  <main class="py-4">
+    <div class="container">
+      <!-- Replace this with your own content for each page -->
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title">Content goes here</h5>
+          <p class="card-text text-muted">
+            Use this area for page‑specific sections like detailed services, journey timeline, founder profile, etc.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER (same for all pages) -->
+  <footer class="bg-dark text-white py-2">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-start">
+          <small>&copy; 2026 Suriya Enterprises. All Rights Reserved.</small>
+        </div>
+        <div class="col-md-6 text-end">
+          <small>
+            Powered by <a href="https://ruralboltron.com" class="text-white text-decoration-none">ruralboltron.com</a> | 
+            +91 87787 91978 | +91 63802 18003 |
+            <a href="login.html" class="text-white-50 text-decoration-none ms-2">Admin</a>
+          </small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
